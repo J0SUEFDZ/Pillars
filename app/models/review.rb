@@ -1,4 +1,3 @@
 class Review < ApplicationRecord
-    belongs_to :restaurant
-    belongs_to :event
+    belongs_to :reviewed, polyphirmic: true, optional: false
 end
