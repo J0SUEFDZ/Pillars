@@ -14,6 +14,8 @@ class ReviewsTest < ApplicationSystemTestCase
     visit reviews_url
     click_on "New Review"
 
+    fill_in "Review", with: @review.review
+    fill_in "Type", with: @review.type
     click_on "Create Review"
 
     assert_text "Review was successfully created"
@@ -24,6 +26,8 @@ class ReviewsTest < ApplicationSystemTestCase
     visit reviews_url
     click_on "Edit", match: :first
 
+    fill_in "Review", with: @review.review
+    fill_in "Type", with: @review.type
     click_on "Update Review"
 
     assert_text "Review was successfully updated"

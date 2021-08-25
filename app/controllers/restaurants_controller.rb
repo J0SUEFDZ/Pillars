@@ -64,6 +64,6 @@ class RestaurantsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def restaurant_params
-      params.fetch(:restaurant, {})
+      params.require(:restaurant).permit(:name, :location)
     end
 end
