@@ -12,7 +12,7 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @review.reviewed.name %>
+  <%= @review.reviewed&.name %>
 </p>
 
 <%= link_to 'Edit', edit_review_path(@review) %> |
