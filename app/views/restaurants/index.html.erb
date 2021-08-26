@@ -7,7 +7,6 @@
     <tr>
       <th>Name</th>
       <th>Location</th>
-      <th>Events</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,7 +15,6 @@
     <% @restaurants.each do |restaurant| %>
       <tr>
         <td><%= restaurant.name %></td>
-        <td><%= restaurant.location %></td>
         <td><%= restaurant.location %></td>
         <td><%= link_to 'Add Review', restaurant_review_path(restaurant) %></td>
         <td><%= link_to 'Show', restaurant %></td>

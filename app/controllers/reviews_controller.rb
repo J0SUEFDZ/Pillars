@@ -22,7 +22,6 @@ class ReviewsController < ApplicationController
   # POST /reviews or /reviews.json
   def create
     reviewed = params[:review][:type] == "restaurant" ? Restaurant.find(params[:review][:reviewed_id]) : Event.find(params[:review][:reviewed_id])
-    # binding.pry
     @review = Review.new(review: params[:review][:review], reviewed: reviewed)
     respond_to do |format|
       if @review.save

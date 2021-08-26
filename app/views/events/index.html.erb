@@ -20,6 +20,7 @@
         <td><%= event.event_date %></td>
         <td><%= event.restaurant.name %></td>
         <td><%= event.restaurant.location %></td>
+        <td><%= link_to 'Add Review', event_review_path(event) %></td>
         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
