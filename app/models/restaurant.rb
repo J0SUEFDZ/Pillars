@@ -1,8 +1,7 @@
 require 'pry'
 
 class Restaurant < ApplicationRecord
-    has_many :events
-    has_many :reviews
+    has_many :events, dependent: :destroy
 
     def restaurant_events
         events.collect(&:event_date)

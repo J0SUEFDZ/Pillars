@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-  before_action :set_restaurant, only: %i[ show edit update destroy ]
+  before_action :set_restaurant, only: %i[ show edit update destroy]
 
   # GET /restaurants or /restaurants.json
   def index
@@ -19,10 +19,12 @@ class RestaurantsController < ApplicationController
   def edit
   end
 
+  def create_review
+  end
+
   # POST /restaurants or /restaurants.json
   def create
     @restaurant = Restaurant.new(restaurant_params)
-
     respond_to do |format|
       if @restaurant.save
         format.html { redirect_to @restaurant, notice: "Restaurant was successfully created." }
@@ -64,6 +66,6 @@ class RestaurantsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def restaurant_params
-      params.require(:restaurant).permit(:name, :location)
+      params.require(:restaurant).permit(:name, :location, :review)
     end
 end

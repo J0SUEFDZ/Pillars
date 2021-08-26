@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_25_025224) do
+ActiveRecord::Schema.define(version: 2021_08_25_001944) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "events", force: :cascade do |t|
     t.datetime "event_date"
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "restaurant_id"
-    t.string "name"
     t.index ["restaurant_id"], name: "index_events_on_restaurant_id"
   end
 
@@ -39,11 +39,6 @@ ActiveRecord::Schema.define(version: 2021_08_25_025224) do
     t.string "reviewed_type"
     t.bigint "reviewed_id"
     t.index ["reviewed_type", "reviewed_id"], name: "index_reviews_on_reviewed"
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "events", "restaurants"

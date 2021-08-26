@@ -7,7 +7,12 @@
 
 <p>
   <strong>Type:</strong>
-  <%= @review.type %>
+  <%= @review.reviewed_type %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @review.reviewed.name %>
 </p>
 
 <%= link_to 'Edit', edit_review_path(@review) %> |
